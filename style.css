@@ -269,3 +269,21 @@ main {
     text-align: center;
     padding: 3.5%;
 }
+
+iframe{
+    margin: 10% 8%;
+    border-radius: 8px;
+}
+
+.container section{
+    margin: 3%;
+}
+
+footer{
+    width: 95%;
+    margin: 2% auto;
+    background-color: #A03B2F;
+    padding: 3.5%;
+    text-align: center;
+    border-radius: 8px;
+}
