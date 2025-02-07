@@ -43,6 +43,3 @@ function initGoogleSheetsApi() {
 
 // Carrega a API do Google Sheets e inicia a aplicação
 gapi.load('client', initGoogleSheetsApi);
-
-
-

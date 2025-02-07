@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galeria</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+
+    </style>
+</head>
+<body>
+    <header class="header-container">
+        <h1>Galeria da Associação 📸</h1>
+    </header>
+    <nav class="nav-bar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+            <li><a href="sobrenos.html">Sobre Nós</a></li>
+        </ul>
+    </nav>
+
+    <div class="container-gallery">
+        <section class="gallery-section">
+            <h2>Nossa História em Fotos</h2><br>
+            <div class="gallery">
+                <img src="/assets/images/equipe-projeto-e-presidente.JPG" alt="" onclick="abrirModal(0)">
+                <img src="/assets/images/festa-inauguracao-associacao.jpg" alt="" onclick="abrirModal(1)">
+                <img src="/assets/images/barracao-congadeiros.JPG" alt="" onclick="abrirModal(2)">
+                <img src="/assets/images/Reinado com o Rei Joaquim Santana.jpg" alt="" onclick="abrirModal(3)">
+                <img src="/assets/images/primeira-congada-machado.jpg" alt="" onclick="abrirModal(4)">
+                <img src="/assets/images/reuniao-fotos.JPG" alt="" onclick="abrirModal(5)">
+                <img src="/assets/images/tradicoes-festa/subida-do-mastro.jpg" alt="" onclick="abrirModal(6)">
+            </div>
+        </section>
+    </div>
+
+    <div class="modal" id="modal">
+        <span class="fechar" onclick="fecharModal()">&times;</span>
+        <span class="navegar anterior" onclick="mudarImagem(-1)">&#10094;</span>
+        <img id="imagemModal">
+        <span class="navegar proximo" onclick="mudarImagem(1)">&#10095;</span>
+    </div>
+
+    <script>
+        let imagens = [
+            "/assets/images/equipe-projeto-e-presidente.JPG",
+            "/assets/images/festa-inauguracao-associacao.jpg",
+            "/assets/images/barracao-congadeiros.JPG",
+            "/assets/images/Reinado com o Rei Joaquim Santana.jpg",
+            "/assets/images/primeira-congada-machado.jpg",
+            "/assets/images/reuniao-fotos.JPG",
+            "/assets/images/tradicoes-festa/subida-do-mastro.jpg"
+        ];
+        let indiceAtual = 0;
+        
+        function abrirModal(indice) {
+            indiceAtual = indice;
+            document.getElementById("imagemModal").src = imagens[indiceAtual];
+            document.getElementById("modal").style.display = "flex";
+        }
+        
+        function fecharModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+        
+        function mudarImagem(direcao) {
+            indiceAtual += direcao;
+            if (indiceAtual < 0) indiceAtual = imagens.length - 1;
+            if (indiceAtual >= imagens.length) indiceAtual = 0;
+            document.getElementById("imagemModal").src = imagens[indiceAtual];
+        }
+    </script>
+</body>
+</html>
